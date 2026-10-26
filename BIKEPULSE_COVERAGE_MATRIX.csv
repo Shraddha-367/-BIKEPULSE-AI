@@ -1,0 +1,57 @@
+id,topic,implementation_location,required_visible_evidence,status,test_status,evidence_path,notes
+1,Web Scraping using Requests and BeautifulSoup,src/data_collection.py,scrape_uci_metadata() fetches/caches UCI page metadata,COMPLETE,PASS,,Implemented with offline cache fallback
+2,HTML Parsing and Data Extraction,src/data_collection.py,_parse_html() extracts title/description/variables from HTML,COMPLETE,PASS,,Extracts known variable metadata as fallback
+3,Data Collection and CSV Dataset Creation,src/data_collection.py,load_hour_csv() validates schema + cnt=casual+registered audit,COMPLETE,PASS,,17379 rows expected
+4,Data Cleaning and Preprocessing,src/preprocessing.py,clean_dataframe() pipeline with date parsing + range validation,COMPLETE,PASS,,Adds datetime_hour + decoded columns
+5,Missing Values and Duplicate Handling,src/preprocessing.py,run_missing_duplicate_audit() + inject_synthetic_issues() fixture,COMPLETE,PASS,,Synthetic fixture test for demonstration
+6,Exploratory Data Analysis (EDA),pages/2_Exploratory_Analysis.py,Interactive filters on season/year/weather + grouped stats,COMPLETE,PASS,,Sidebar filters + grouped KPI aggregations
+7,Descriptive Statistics,src/descriptive_stats.py,compute_descriptive_stats() returns mean/median/mode/std/IQR etc,COMPLETE,PASS,,All 14 statistics computed
+8,Data Visualization,pages/2_Exploratory_Analysis.py,6 chart types: histogram/box/bar/pie/scatter/line in tabs,COMPLETE,PASS,,All chart types implemented with real data
+9,"Probability Distributions (Normal, Uniform, Binomial, Poisson)",src/probability.py,fit_normal/fit_poisson/fit_binomial + simulate_uniform with clear labels,COMPLETE,PASS,,Uniform simulation explicitly labeled SYNTHETIC
+10,Random Sampling Techniques,src/sampling.py,simple_random/systematic/stratified/cluster_sample functions,COMPLETE,PASS,,All 4 schemes with reproducible seeds
+11,Population and Sample Statistics,src/sampling.py,population_vs_sample_stats() side-by-side comparison,COMPLETE,PASS,,Shows bias for each sampling scheme
+12,Sampling Distribution,src/sampling.py,sampling_distribution() 1000 iterations with mean histogram,COMPLETE,PASS,,SE comparison empirical vs theoretical
+13,Central Limit Theorem (CLT),src/sampling.py,central_limit_theorem() for n=30/50/100/200 with Shapiro-Wilk,COMPLETE,PASS,,Temporal dependence caveat documented
+14,Point Estimation,src/statistical_inference.py,point_estimates() mean/median + high-demand proportion,COMPLETE,PASS,,Uses 75th pct training threshold
+15,Standard Error,src/statistical_inference.py,standard_error() IID + cluster-robust SE with caveats,COMPLETE,PASS,,Documents IID assumption violation
+16,Bootstrap Sampling and Estimation,src/statistical_inference.py,bootstrap_estimate() standard + block bootstrap options,COMPLETE,PASS,,Block bootstrap for temporal data
+17,Confidence Intervals,src/statistical_inference.py,confidence_interval_mean() at 90/95/99% with t-based formula,COMPLETE,PASS,,Width increases with confidence level
+18,Coverage Probability,src/statistical_inference.py,coverage_probability_simulation() with known-population synthetic data,COMPLETE,PASS,,Clearly labeled SYNTHETIC simulation
+19,Comparison of Mean and Median as Estimators,src/statistical_inference.py,mean_vs_median_comparison() real + outlier/skew simulations,COMPLETE,PASS,,Lognormal and outlier simulations labeled
+20,Hypothesis Testing,src/hypothesis_tests.py,hypothesis_test_meta() framework returning statistic/p/decision,COMPLETE,PASS,,All tests use this framework
+21,Null and Alternative Hypothesis,src/hypothesis_tests.py,Every test function includes H0 and H1 strings in result,COMPLETE,PASS,,Displayed prominently in Streamlit UI
+22,P-Value and Significance Level,src/hypothesis_tests.py,_decision() function with alpha selector + nuanced interpretation,COMPLETE,PASS,,Alpha selector in sidebar (0.01/0.05/0.10)
+23,One-Sample T-Test,src/hypothesis_tests.py,one_sample_ttest() with user-specified benchmark and hour filter,COMPLETE,PASS,,Default benchmark 189.5 (historical mean)
+24,Independent Two-Sample T-Test,src/hypothesis_tests.py,two_sample_ttest() Welch t working vs non-working day demand,COMPLETE,PASS,,Documents temporal dependence caveat
+25,Paired T-Test,src/hypothesis_tests.py,paired_ttest() aligned by dteday morning vs evening rush hours,COMPLETE,PASS,,Alignment by date ensures correct pairing
+26,One-Way ANOVA,src/hypothesis_tests.py,one_way_anova() 4-season comparison + Levene homogeneity test,COMPLETE,PASS,,Levene test for equal variances
+27,Chi-Square Test of Independence,src/hypothesis_tests.py,chi_square_independence() weathersit vs high_demand contingency,COMPLETE,PASS,,Expected count validation per Cochran rule
+28,Covariance Analysis,src/correlation.py,covariance_analysis() full covariance matrix + pairwise interpretation,COMPLETE,PASS,,Normalized UCI vars in [0,1] range
+29,Pearson Correlation,src/correlation.py,pearson_correlation() r + significance test with assumptions,COMPLETE,PASS,,H0: rho=0 formulated explicitly
+30,Spearman Rank Correlation,src/correlation.py,spearman_correlation() rho + significance test,COMPLETE,PASS,,Non-parametric; no normality assumption
+31,Correlation Hypothesis Testing,src/correlation.py,correlation_hypothesis_tests() all key variable pairs,COMPLETE,PASS,,5 pairs with both Pearson and Spearman
+32,Correlation Matrix and Heatmap,pages/6_Correlation_Analysis.py,correlation_matrix() + px.imshow heatmap with method selector,COMPLETE,PASS,,Pearson and Spearman options
+33,Min-Max Normalization,src/feature_engineering.py,build_preprocessor() with scaler_type=minmax; fit on train only,COMPLETE,PASS,,MinMaxScaler in ColumnTransformer pipeline
+34,Z-Score Standardization,src/feature_engineering.py,build_preprocessor() default StandardScaler; fit on train only,COMPLETE,PASS,,StandardScaler in ColumnTransformer pipeline
+35,Label Encoding,src/feature_engineering.py,encode_target() binary high_demand from train 75th pct threshold,COMPLETE,PASS,,LabelEncoder + threshold persisted to JSON
+36,One-Hot Encoding,src/feature_engineering.py,OneHotEncoder(handle_unknown=ignore) for season/weathersit/weekday,COMPLETE,PASS,,handle_unknown=ignore for unseen categories
+37,Feature Selection and Preparation,src/feature_engineering.py,select_features_kbest() + add_engineered_features() on train only,COMPLETE,PASS,,Cyclic hr/month encoding + interactions
+38,Train-Test Split,src/feature_engineering.py,chronological_split() 70/15/15 NO shuffle with boundary logging,COMPLETE,PASS,,Train ends before val; val ends before test
+39,Simple Linear Regression,src/regression_models.py,build_simple_linear_regression() single temp feature,COMPLETE,PASS,,Interpretable baseline model
+40,Multiple Linear Regression,src/regression_models.py,build_multiple_linear_regression() all engineered features,COMPLETE,PASS,,Full feature pipeline
+41,Ridge Regression,src/regression_models.py,build_ridge_regression() L2 regularization alpha=1.0,COMPLETE,PASS,,Reduces multicollinearity
+42,Lasso Regression,src/regression_models.py,build_lasso_regression() L1 regularization alpha=0.1,COMPLETE,PASS,,Sparse feature selection
+43,Decision Tree Regression,src/regression_models.py,build_decision_tree_regression() max_depth=12,COMPLETE,PASS,,Nonlinear baseline
+44,Random Forest Regression,src/regression_models.py,build_random_forest_regression() 200 trees,COMPLETE,PASS,,Ensemble with n_jobs=-1
+45,"Regression Model Evaluation (MAE, MSE, RMSE, R²)",src/model_evaluation.py,evaluate_regression() all 4 metrics on held-out test,COMPLETE,PASS,,compare_regression_results() leaderboard
+46,Logistic Regression Classification,src/classification_models.py,build_logistic_regression() lbfgs solver C=1.0,COMPLETE,PASS,,Binary high-demand pipeline
+47,Decision Tree Classification,src/classification_models.py,build_decision_tree_classifier() max_depth=10,COMPLETE,PASS,,Binary high-demand pipeline
+48,Random Forest Classification,src/classification_models.py,build_random_forest_classifier() 200 trees,COMPLETE,PASS,,Binary high-demand pipeline
+49,K-Nearest Neighbors (KNN) Classification,src/classification_models.py,build_knn_classifier() n_neighbors=7 with scaled features,COMPLETE,PASS,,Preprocessing in pipeline ensures scaling
+50,Support Vector Machine (SVM) Classification,src/classification_models.py,build_svm_classifier() RBF kernel probability=True,COMPLETE,PASS,,Platt scaling for probability output
+51,"Classification Model Evaluation (Accuracy, Precision, Recall, F1, Confusion Matrix)",src/model_evaluation.py,evaluate_classification() all metrics + class distribution,COMPLETE,PASS,,compare_classification_results() leaderboard
+52,Multiple Model Training and Comparison,src/model_training.py,train_all_models() orchestrates all 11 models on matched splits,COMPLETE,PASS,,Fixed seed=42; parallel where possible
+53,Best Model Selection,src/model_training.py,val R² for regression; val F1 for classification; test used once,COMPLETE,PASS,,Test set untouched during selection
+54,Model Saving and Loading using Joblib,src/model_persistence.py,save_model() + load_model() + verify_reload() SHA-256 integrity,COMPLETE,PASS,,Parity check on reload
+55,Interactive GUI Development using Streamlit,app.py + pages/,10 connected pages with dark-mode premium design + sidebar nav,COMPLETE,PASS,,Stateful session data + CSV upload support
+56,User Input-Based Prediction System,pages/9_Demand_Prediction.py,validate_user_input() + predict_demand() with UCI unit normalization,COMPLETE,PASS,,Loaded from saved .joblib; no retrain on page load

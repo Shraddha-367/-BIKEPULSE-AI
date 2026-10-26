@@ -1,0 +1,53 @@
+{
+  "title": "UCI Machine Learning Repository",
+  "description": "Discover datasets around the world!",
+  "variables": [
+    {
+      "name": "Variable Name",
+      "description": "Role"
+    },
+    {
+      "name": "instant",
+      "description": "ID"
+    },
+    {
+      "name": "dteday",
+      "description": "Feature"
+    },
+    {
+      "name": "season",
+      "description": "Feature"
+    },
+    {
+      "name": "yr",
+      "description": "Feature"
+    },
+    {
+      "name": "mnth",
+      "description": "Feature"
+    },
+    {
+      "name": "hr",
+      "description": "Feature"
+    },
+    {
+      "name": "holiday",
+      "description": "Feature"
+    },
+    {
+      "name": "weekday",
+      "description": "Feature"
+    },
+    {
+      "name": "workingday",
+      "description": "Feature"
+    },
+    {
+      "name": "weathersit",
+      "description": "Feature"
+    }
+  ],
+  "source_url": "https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset",
+  "fetch_timestamp": "2026-10-26T22:18:54.159053",
+  "from_cache": false
+}

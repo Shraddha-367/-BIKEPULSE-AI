@@ -1,0 +1,110 @@
+[
+  {
+    "id": "01_main_gui_dashboard",
+    "filename": "01_main_gui_dashboard.png",
+    "title": "Figure 1: BIKEPULSE AI Main GUI Interface & Executive Dashboard",
+    "description": "Executive dashboard featuring system KPI cards, chronological hourly rental profile, and analytical module navigation grid.",
+    "size_kb": 1003.6,
+    "resolution": "2160x1425 (1.5x DPI)",
+    "status": "VERIFIED_VALID"
+  },
+  {
+    "id": "02_data_preprocessing_pipeline",
+    "filename": "02_data_preprocessing_pipeline.png",
+    "title": "Figure 2: Data Ingestion, Schema Validation & Missing Values Audit",
+    "description": "UCI Capital Bikeshare dataset metadata, audit confirming 0 missing values and 0 duplicate rows, and preprocessed data preview.",
+    "size_kb": 1065.5,
+    "resolution": "2160x1425 (1.5x DPI)",
+    "status": "VERIFIED_VALID"
+  },
+  {
+    "id": "03_exploratory_data_analysis",
+    "filename": "03_exploratory_data_analysis.png",
+    "title": "Figure 3: Exploratory Data Analysis & Rental Demand Distributions",
+    "description": "Interactive EDA distributions showing hourly demand histograms, boxplots across weather/seasons, and parametric summary metrics.",
+    "size_kb": 909.2,
+    "resolution": "2160x1425 (1.5x DPI)",
+    "status": "VERIFIED_VALID"
+  },
+  {
+    "id": "04_probability_distributions",
+    "filename": "04_probability_distributions.png",
+    "title": "Figure 4: Theoretical Probability Distributions & Synthetic Simulation",
+    "description": "Normal, Poisson, and Binomial distribution fitting against empirical hourly rental counts with goodness-of-fit diagnostic analysis.",
+    "size_kb": 933.2,
+    "resolution": "2160x1425 (1.5x DPI)",
+    "status": "VERIFIED_VALID"
+  },
+  {
+    "id": "05_sampling_schemes_and_clt",
+    "filename": "05_sampling_schemes_and_clt.png",
+    "title": "Figure 5: Statistical Sampling Schemes & Central Limit Theorem Convergence",
+    "description": "Comparative evaluation of 4 sampling schemes (Random, Systematic, Stratified, Cluster) and CLT sampling distribution convergence.",
+    "size_kb": 947.1,
+    "resolution": "2160x1425 (1.5x DPI)",
+    "status": "VERIFIED_VALID"
+  },
+  {
+    "id": "06_hypothesis_testing_suite",
+    "filename": "06_hypothesis_testing_suite.png",
+    "title": "Figure 6: Parameterizable Hypothesis Testing Suite & Significance Decisions",
+    "description": "Statistical significance testing including One-Sample t, Welch Two-Sample t, Paired Rush-Hour t, One-Way ANOVA, and Chi-Square tests.",
+    "size_kb": 914.6,
+    "resolution": "2160x1425 (1.5x DPI)",
+    "status": "VERIFIED_VALID"
+  },
+  {
+    "id": "07_correlation_analysis_heatmap",
+    "filename": "07_correlation_analysis_heatmap.png",
+    "title": "Figure 7: Correlation Matrix Heatmap, Multicollinearity & Covariance",
+    "description": "Pearson and Spearman correlation coefficients heatmap, covariance analysis, and temperature-humidity collinearity assessment.",
+    "size_kb": 915.4,
+    "resolution": "2160x1425 (1.5x DPI)",
+    "status": "VERIFIED_VALID"
+  },
+  {
+    "id": "08_model_training_pipeline",
+    "filename": "08_model_training_pipeline.png",
+    "title": "Figure 8: Feature Engineering & Chronological Train-Validation-Test Splitting",
+    "description": "Leakage-safe preprocessing pipeline (StandardScaler, MinMaxScaler, OneHotEncoder) and 70/15/15 chronological split configuration.",
+    "size_kb": 758.1,
+    "resolution": "2160x1425 (1.5x DPI)",
+    "status": "VERIFIED_VALID"
+  },
+  {
+    "id": "09_model_comparison_leaderboard",
+    "filename": "09_model_comparison_leaderboard.png",
+    "title": "Figure 9: Machine Learning Model Leaderboards (6 Regressors & 5 Classifiers)",
+    "description": "Comprehensive benchmarking leaderboard ranking all 11 models by R\u00b2, RMSE, Accuracy, and F1-score on held-out test splits.",
+    "size_kb": 979.2,
+    "resolution": "2160x1425 (1.5x DPI)",
+    "status": "VERIFIED_VALID"
+  },
+  {
+    "id": "10_demand_prediction_workspace",
+    "filename": "10_demand_prediction_workspace.png",
+    "title": "Figure 10: Real-Time Demand Prediction Workspace & Inference Output",
+    "description": "User-input meteorological simulation interface displaying predicted hourly rentals, high-demand classification, and resource advice.",
+    "size_kb": 742.0,
+    "resolution": "2160x1425 (1.5x DPI)",
+    "status": "VERIFIED_VALID"
+  },
+  {
+    "id": "11_confusion_matrix_evaluation",
+    "filename": "11_confusion_matrix_evaluation.png",
+    "title": "Figure 11: Held-Out Confusion Matrix & Best Model Selection Rationale",
+    "description": "True held-out confusion matrix (TN: 1465, FP: 71, FN: 287, TP: 785) and validation-driven model selection rationale.",
+    "size_kb": 979.2,
+    "resolution": "2160x1425 (1.5x DPI)",
+    "status": "VERIFIED_VALID"
+  },
+  {
+    "id": "12_executive_reports_planning",
+    "filename": "12_executive_reports_planning.png",
+    "title": "Figure 12: Executive Intelligence Report & Fleet Rebalancing Planning",
+    "description": "Comprehensive operational recommendations, maintenance schedules, and resource planning derived from statistical demand forecasts.",
+    "size_kb": 1067.7,
+    "resolution": "2160x1425 (1.5x DPI)",
+    "status": "VERIFIED_VALID"
+  }
+]

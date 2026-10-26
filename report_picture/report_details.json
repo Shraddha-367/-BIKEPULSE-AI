@@ -1,0 +1,374 @@
+{
+  "project_title": "BIKEPULSE AI \u2014 Smart Bike Rental Demand Prediction, Statistical Intelligence & Resource Planning System",
+  "academic_context": "Ramdeobaba University Semester V Statistical Inference Lab Project Report",
+  "dataset_statistics": {
+    "dataset_name": "UCI Bike Sharing Dataset (Hourly)",
+    "source": "UCI Machine Learning Repository / Capital Bikeshare Washington D.C.",
+    "collection_period": "2011-01-01 to 2012-12-31",
+    "total_records": 17379,
+    "total_columns": 24,
+    "columns_list": [
+      "instant",
+      "dteday",
+      "season",
+      "yr",
+      "mnth",
+      "hr",
+      "holiday",
+      "weekday",
+      "workingday",
+      "weathersit",
+      "temp",
+      "atemp",
+      "hum",
+      "windspeed",
+      "casual",
+      "registered",
+      "cnt",
+      "datetime_hour",
+      "season_label",
+      "weather_label",
+      "temp_celsius",
+      "atemp_celsius",
+      "hum_percent",
+      "windspeed_kmh"
+    ],
+    "missing_values_count": 0,
+    "duplicate_rows_count": 0,
+    "target_variable_regression": "cnt (hourly bike rental count)",
+    "target_variable_classification": "high_demand (binary 0/1, threshold at 75th percentile of train data)",
+    "regression_target_summary": {
+      "mean": 189.46,
+      "median": 142.0,
+      "std": 181.39,
+      "min": 1,
+      "max": 977,
+      "q25": 40.0,
+      "q75": 281.0,
+      "iqr": 241.0
+    }
+  },
+  "chronological_splits": {
+    "split_strategy": "Chronological Sequential Split (Strictly avoids temporal data leakage)",
+    "train_set": {
+      "records": 12165,
+      "percentage": 70.0,
+      "date_range": "2011-01-01 to 2012-05-27"
+    },
+    "validation_set": {
+      "records": 2606,
+      "percentage": 15.0,
+      "date_range": "2012-05-27 to 2012-09-12"
+    },
+    "test_set": {
+      "records": 2608,
+      "percentage": 15.01,
+      "date_range": "2012-09-12 to 2012-12-31"
+    },
+    "high_demand_threshold": 234.0,
+    "test_class_distribution": {
+      "Low Demand (0)": 1536,
+      "High Demand (1)": 1072
+    }
+  },
+  "environment_versions": {
+    "operating_system": "Windows-10-10.0.26300-SP0",
+    "python_version": "3.11.9",
+    "streamlit_version": "1.39.0",
+    "pandas_version": "2.2.3",
+    "numpy_version": "1.26.4",
+    "scikit_learn_version": "1.5.2",
+    "scipy_version": "1.13.1",
+    "plotly_version": "5.24.1",
+    "joblib_version": "1.4.2"
+  },
+  "regression_results": {
+    "best_model": "Random Forest Regression",
+    "selection_criterion": "Highest Validation R\u00b2 (evaluated strictly on held-out test split)",
+    "test_metrics": {
+      "model": "Random Forest Regression",
+      "MAE": 60.7515,
+      "MSE": 7624.5929,
+      "RMSE": 87.3189,
+      "R2": 0.8352,
+      "n": 2608,
+      "split": "test"
+    },
+    "all_models_ranked": [
+      {
+        "model": "Random Forest Regression",
+        "Val_MAE": 49.398,
+        "Val_MSE": 5794.1573,
+        "Val_RMSE": 76.1194,
+        "Val_R2": 0.8837,
+        "Test_MAE": 60.7515,
+        "Test_MSE": 7624.5929,
+        "Test_RMSE": 87.3189,
+        "Test_R2": 0.8352,
+        "Rank": 1
+      },
+      {
+        "model": "Decision Tree Regression",
+        "Val_MAE": 59.4182,
+        "Val_MSE": 8101.8802,
+        "Val_RMSE": 90.0104,
+        "Val_R2": 0.8374,
+        "Test_MAE": 70.4112,
+        "Test_MSE": 10394.3593,
+        "Test_RMSE": 101.9527,
+        "Test_R2": 0.7754,
+        "Rank": 2
+      },
+      {
+        "model": "Multiple Linear Regression",
+        "Val_MAE": 113.862,
+        "Val_MSE": 21082.5544,
+        "Val_RMSE": 145.1983,
+        "Val_R2": 0.5769,
+        "Test_MAE": 103.4108,
+        "Test_MSE": 20130.7716,
+        "Test_RMSE": 141.883,
+        "Test_R2": 0.565,
+        "Rank": 3
+      },
+      {
+        "model": "Ridge Regression",
+        "Val_MAE": 113.8638,
+        "Val_MSE": 21086.7046,
+        "Val_RMSE": 145.2126,
+        "Val_R2": 0.5769,
+        "Test_MAE": 103.3964,
+        "Test_MSE": 20132.1594,
+        "Test_RMSE": 141.8878,
+        "Test_R2": 0.565,
+        "Rank": 4
+      },
+      {
+        "model": "Lasso Regression",
+        "Val_MAE": 113.986,
+        "Val_MSE": 21166.9064,
+        "Val_RMSE": 145.4885,
+        "Val_R2": 0.5752,
+        "Test_MAE": 103.1306,
+        "Test_MSE": 20195.1572,
+        "Test_RMSE": 142.1097,
+        "Test_R2": 0.5636,
+        "Rank": 5
+      },
+      {
+        "model": "Simple Linear Regression",
+        "Val_MAE": 168.9904,
+        "Val_MSE": 47573.4558,
+        "Val_RMSE": 218.1134,
+        "Val_R2": 0.0453,
+        "Test_MAE": 157.3144,
+        "Test_MSE": 48055.7255,
+        "Test_RMSE": 219.2162,
+        "Test_R2": -0.0384,
+        "Rank": 6
+      }
+    ]
+  },
+  "classification_results": {
+    "best_model": "Decision Tree Classifier",
+    "selection_criterion": "Highest Validation F1-score (evaluated strictly on held-out test split)",
+    "test_metrics": {
+      "model": "Decision Tree Classifier",
+      "Accuracy": 0.8627,
+      "Precision": 0.9171,
+      "Recall": 0.7323,
+      "F1": 0.8143,
+      "class_distribution": {
+        "0": 1536,
+        "1": 1072
+      },
+      "positive_label": 1,
+      "n": 2608,
+      "split": "test"
+    },
+    "all_models_ranked": [
+      {
+        "model": "SVM Classifier",
+        "Val_Accuracy": 0.8903,
+        "Val_Precision": 0.9614,
+        "Val_Recall": 0.827,
+        "Val_F1": 0.8891,
+        "Test_Accuracy": 0.8796,
+        "Test_Precision": 0.9428,
+        "Test_Recall": 0.7528,
+        "Test_F1": 0.8371,
+        "Rank": 1
+      },
+      {
+        "model": "Logistic Regression",
+        "Val_Accuracy": 0.8684,
+        "Val_Precision": 0.8226,
+        "Val_Recall": 0.9596,
+        "Val_F1": 0.8859,
+        "Test_Accuracy": 0.8413,
+        "Test_Precision": 0.7337,
+        "Test_Recall": 0.9636,
+        "Test_F1": 0.8331,
+        "Rank": 2
+      },
+      {
+        "model": "Decision Tree Classifier",
+        "Val_Accuracy": 0.9075,
+        "Val_Precision": 0.9347,
+        "Val_Recall": 0.8882,
+        "Val_F1": 0.9109,
+        "Test_Accuracy": 0.8627,
+        "Test_Precision": 0.9171,
+        "Test_Recall": 0.7323,
+        "Test_F1": 0.8143,
+        "Rank": 3
+      },
+      {
+        "model": "Random Forest Classifier",
+        "Val_Accuracy": 0.8388,
+        "Val_Precision": 0.9736,
+        "Val_Recall": 0.7167,
+        "Val_F1": 0.8256,
+        "Test_Accuracy": 0.8206,
+        "Test_Precision": 0.959,
+        "Test_Recall": 0.5886,
+        "Test_F1": 0.7295,
+        "Rank": 4
+      },
+      {
+        "model": "KNN Classifier",
+        "Val_Accuracy": 0.8078,
+        "Val_Precision": 0.9644,
+        "Val_Recall": 0.6633,
+        "Val_F1": 0.786,
+        "Test_Accuracy": 0.7895,
+        "Test_Precision": 0.9564,
+        "Test_Recall": 0.5112,
+        "Test_F1": 0.6663,
+        "Rank": 5
+      }
+    ],
+    "best_model_confusion_matrix": {
+      "matrix_2x2": [
+        [
+          1465,
+          71
+        ],
+        [
+          287,
+          785
+        ]
+      ],
+      "true_negatives": 1465,
+      "false_positives": 71,
+      "false_negatives": 287,
+      "true_positives": 785,
+      "accuracy": 0.8627,
+      "precision": 0.9171,
+      "recall": 0.7323,
+      "f1_score": 0.8143
+    },
+    "all_models_confusion_matrices": {
+      "Logistic Regression": {
+        "matrix_2x2": [
+          [
+            1161,
+            375
+          ],
+          [
+            39,
+            1033
+          ]
+        ],
+        "true_negatives": 1161,
+        "false_positives": 375,
+        "false_negatives": 39,
+        "true_positives": 1033,
+        "accuracy": 0.8413,
+        "precision": 0.7337,
+        "recall": 0.9636,
+        "f1_score": 0.8331
+      },
+      "Decision Tree Classifier": {
+        "matrix_2x2": [
+          [
+            1465,
+            71
+          ],
+          [
+            287,
+            785
+          ]
+        ],
+        "true_negatives": 1465,
+        "false_positives": 71,
+        "false_negatives": 287,
+        "true_positives": 785,
+        "accuracy": 0.8627,
+        "precision": 0.9171,
+        "recall": 0.7323,
+        "f1_score": 0.8143
+      },
+      "Random Forest Classifier": {
+        "matrix_2x2": [
+          [
+            1509,
+            27
+          ],
+          [
+            441,
+            631
+          ]
+        ],
+        "true_negatives": 1509,
+        "false_positives": 27,
+        "false_negatives": 441,
+        "true_positives": 631,
+        "accuracy": 0.8206,
+        "precision": 0.959,
+        "recall": 0.5886,
+        "f1_score": 0.7295
+      },
+      "KNN Classifier": {
+        "matrix_2x2": [
+          [
+            1511,
+            25
+          ],
+          [
+            524,
+            548
+          ]
+        ],
+        "true_negatives": 1511,
+        "false_positives": 25,
+        "false_negatives": 524,
+        "true_positives": 548,
+        "accuracy": 0.7895,
+        "precision": 0.9564,
+        "recall": 0.5112,
+        "f1_score": 0.6663
+      },
+      "SVM Classifier": {
+        "matrix_2x2": [
+          [
+            1487,
+            49
+          ],
+          [
+            265,
+            807
+          ]
+        ],
+        "true_negatives": 1487,
+        "false_positives": 49,
+        "false_negatives": 265,
+        "true_positives": 807,
+        "accuracy": 0.8796,
+        "precision": 0.9428,
+        "recall": 0.7528,
+        "f1_score": 0.8371
+      }
+    }
+  }
+}
